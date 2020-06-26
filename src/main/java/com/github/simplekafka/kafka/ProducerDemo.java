@@ -7,17 +7,17 @@ import org.slf4j.LoggerFactory;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
 
-public class KafkaApp {
+public class ProducerDemo {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         Logger logger = LoggerFactory.getLogger(Producer.class);
-        Properties properties = Config.producerProperTies("127.0.0.1:9092");
+        Properties properties = Config.producerProperties("127.0.0.1:9092");
         KafkaProducer<String, String> kafkaProducer = new KafkaProducer<String, String>(properties);
 
         Producer producer = new Producer(kafkaProducer, logger);
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
             String key = "id_" + i;
-            producer.send("first_topic", key, "New Message: " + i);
+            producer.send("hello_world", key, "New Message: " + i);
         }
 
         kafkaProducer.flush();
