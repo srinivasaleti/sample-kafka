@@ -1,5 +1,7 @@
-package com.github.simplekafka.kafka;
+package com.github.simplekafka;
 
+import com.github.simplekafka.kafka.Config;
+import com.github.simplekafka.kafka.Consumer;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

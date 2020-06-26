@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import java.time.Duration;
 import java.util.Collection;
 
-class Consumer {
+public class Consumer {
     private final KafkaConsumer<String, String> kafkaConsumer;
     private final Logger logger;
 
